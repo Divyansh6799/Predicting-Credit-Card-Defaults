@@ -112,11 +112,12 @@
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-light bg-dark static-top">
+	<nav class="navbar navbar-light bg-light static-top">
 		<div class="container-fluid">
 			<a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh_54caCI-PPsxwkxKj0ExmCYWEYHSC39wWbNPWiDPJuVQo_Iur_2gLlfJ6BXu7TkM9lc&usqp=CAU"/></a>
 			<a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd1ALgzkKXx1CYtQ1F02o7HvlQfJHsekNzQw&usqp=CAU"/></a>
 			<a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRG58of4Jg-vS39Hwb-1JNqBaiEcKCZc1mzg&usqp=CAU"/></a>
+			<a class="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtvjG_-RvDQtqPRcOLEbNeY0pPXDZPSHwa4SoWifPclqzfokk5WaJRbpCkNtQ-O9LLkjU&usqp=CAU"/></a>
 		</div>
 	</nav>
 
@@ -133,7 +134,7 @@
 						</div>
 						<div class=""><button class="form-control btn-primary" id="customfile">Custom File Predict</button></div>
 						<br/><center><b>Or</b></center><br/>
-						<button class="form-control btn-primary mb-5" id="defaultfile" data-path = "Prediction_Batch_files">
+						<button class="form-control btn-danger mb-5" id="defaultfile" data-path = "Prediction_Batch_files">
 							Default File Predict
 						</button>
 					</form>
@@ -142,7 +143,6 @@
 					<div class="result-box shadow rounded-lg">
 						<h6 class="title">Results</h6>
 						<div class="json-result">
-							
 						</div>
 					</div>
 				</div>
@@ -197,7 +197,11 @@
 					url : "/predict",
 					type: "POST",
 					data: {filepath:path},
+					// headers:{
+            		// 	Accept: application/json,
+					// },
 					success: function(response){
+						console.log(response.data)
 						$(".json-result").html('<p>"Prediction File created !!!</p><pre>' + response + '</pre>');
 						$('#loading').hide();
 					}
@@ -207,5 +211,4 @@
 		});
 	</script>
 </body>
-
 </html>
