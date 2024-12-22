@@ -4,5 +4,3 @@ In this project, I have performed an end-to-end data mining exercise including d
 
 Demo Pic--
 ![](https://github.com/Divyansh6799/Predicting-Credit-Card-Defaults/blob/master/Screenshot%20(20).png)
-
-Try This Link-https://identifycreditcarddefaulter.herokuapp.com/
